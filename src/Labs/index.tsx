@@ -4,6 +4,7 @@ export default function Labs() {
     <div id="wd-labs">
       <h1>Labs</h1>
       <Lab1 />
+      <h1> KR </h1>
     </div>
   );
 }
