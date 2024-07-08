@@ -7,7 +7,6 @@ export default function Labs() {
   return (
     <div>
       <h1>Labs</h1>
-<<<<<<< HEAD
       <TOC />
       <Routes>
         <Route path="/" element={<Navigate to="Lab1" />} />
@@ -15,9 +14,7 @@ export default function Labs() {
         <Route path="Lab2" element={<Lab2 />} />
         <Route path="Lab3" element={<Lab3 />} />
       </Routes>
-=======
       <Lab1 />
->>>>>>> origin/main
     </div>
   );
 }
