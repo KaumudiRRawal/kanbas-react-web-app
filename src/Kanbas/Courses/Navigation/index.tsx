@@ -1,16 +1,20 @@
+import { useLocation, useParams } from 'react-router';
+import './index.css';
+
 export default function CoursesNavigation() {
-    return (
-      <ul id="wd-courses-navigation">
-        <li><a id="wd-course-home-link"    href="#/Kanbas/Courses/1234/Home">Home</a></li>
-        <li><a id="wd-course-modules-link" href="#/Kanbas/Courses/1234/Modules">Modules
-          </a></li>
-        <li><a id="wd-course-piazza-link"  href="#/Kanbas/Courses/1234/Piazza">Piazza</a></li>
-        <li><a id="wd-course-zoom-link"    href="#/Kanbas/Courses/1234/Zoom">Zoom</a></li>
-        <li><a id="wd-course-quizzes-link" href="#/Kanbas/Courses/1234/Assignments">
-            Assignments</a></li>
-        <li><a id="wd-course-assignments-link" href="#/Kanbas/Courses/1234/Quizzes">Quizzes
-          </a></li>
-        <li><a id="wd-course-grades-link"  href="#/Kanbas/Courses/1234/Grades">Grades</a></li>
-      </ul>
-  );}
-  
+  const { pathname } = useLocation();
+  const { cid } = useParams();
+  const isActive = (path: string) => pathname.includes(path);
+
+  return (
+    <div id="wd-courses-navigation" className="list-group fs-5 rounded-0">
+      <a id="wd-course-home-link" href={`#/Kanbas/Courses/${cid}/Home`} className={`list-group-item ${isActive('Home') ? 'active' : 'text-danger'} border-0`}> Home </a>
+      <a id="wd-course-modules-link" href={`#/Kanbas/Courses/${cid}/Modules`} className={`list-group-item ${isActive('Modules') ? 'active' : 'text-danger'} border-0`}> Modules </a>
+      <a id="wd-course-piazza-link" href={`#/Kanbas/Courses/${cid}/Piazza`} className={`list-group-item ${isActive('Piazza') ? 'active' : 'text-danger'} border-0`}> Piazza </a>
+      <a id="wd-course-zoom-link" href={`#/Kanbas/Courses/${cid}/Zoom`} className={`list-group-item ${isActive('Zoom') ? 'active' : 'text-danger'} border-0`}> Zoom </a>
+      <a id="wd-course-quizzes-link" href={`#/Kanbas/Courses/${cid}/Assignments`} className={`list-group-item ${isActive('Assignments') ? 'active' : 'text-danger'} border-0`}> Assignments </a>
+      <a id="wd-course-assignments-link" href={`#/Kanbas/Courses/${cid}/Quizzes`} className={`list-group-item ${isActive('Quizzes') ? 'active' : 'text-danger'} border-0`}> Quizzes </a>
+      <a id="wd-course-grades-link" href={`#/Kanbas/Courses/${cid}/Grades`} className={`list-group-item ${isActive('Grades') ? 'active' : 'text-danger'} border-0`}> Grades </a>
+    </div>
+  );
+}
