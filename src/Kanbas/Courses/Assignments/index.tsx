@@ -6,6 +6,7 @@ import LessonControlButtons from "../Modules/LessonControlButtons";
 import { BsFileText, BsGripVertical } from "react-icons/bs";
 import { IoEllipsisVertical } from "react-icons/io5";
 import { FaPlus } from "react-icons/fa";
+import { FaTrash } from "react-icons/fa";
 
 export default function Assignments() {
   const { cid } = useParams();
@@ -51,6 +52,7 @@ export default function Assignments() {
                     <br />
                     <span className="text-danger">Multiple Modules</span> | Not available until May 6 at 12:00am | <br /> Due May 13 at 11:59pm | 100 pts
                   </div>
+                  <FaTrash/>
                   <LessonControlButtons />
                 </li>
               ))}
