@@ -62,7 +62,6 @@ export default function Kanbas() {
     );
   };
 
-
   return (
     <Provider store={store}>
       <div id="wd-kanbas">

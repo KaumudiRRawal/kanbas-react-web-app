@@ -8,7 +8,6 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import * as client from "./client";
 
-
 export default function Modules() {
   const { cid } = useParams();
   const [moduleName, setModuleName] = useState('');
