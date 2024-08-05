@@ -5,7 +5,6 @@ import Home from "./Home";
 import Assignments from "./Assignments";
 import AssignmentEditor from "./Assignments/Editor";
 import GradesFunction from "./Grades/index";
-import { courses } from "../Database";
 import { FaAlignJustify } from 'react-icons/fa';
 
 export default function Courses({ courses }: { courses: any[]; }) {
