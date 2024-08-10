@@ -15,6 +15,7 @@ export default function CoursesNavigation() {
       <a id="wd-course-quizzes-link" href={`#/Kanbas/Courses/${cid}/Assignments`} className={`list-group-item ${isActive('Assignments') ? 'active' : 'text-danger'} border-0`}> Assignments </a>
       <a id="wd-course-assignments-link" href={`#/Kanbas/Courses/${cid}/Quizzes`} className={`list-group-item ${isActive('Quizzes') ? 'active' : 'text-danger'} border-0`}> Quizzes </a>
       <a id="wd-course-grades-link" href={`#/Kanbas/Courses/${cid}/Grades`} className={`list-group-item ${isActive('Grades') ? 'active' : 'text-danger'} border-0`}> Grades </a>
+      <a id="wd-course-people-link" href={`#/Kanbas/Courses/${cid}/People`} className={`list-group-item ${isActive('People') ? 'active' : 'text-danger'} border-0`}> People </a>
     </div>
   );
 }

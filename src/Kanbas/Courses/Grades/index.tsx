@@ -45,7 +45,12 @@ export default function GradesFunction() {
     setStudents(enrollmentsData);
     setAssignments(assignmentsData);
     setGrades(gradesData);
-    setUsers(usersData);
+    //setUsers(usersData);
+    const transformedUsers = usersData.map(user => ({
+      ...user,
+      _id: user._id.$oid,
+    }));
+    setUsers(transformedUsers);
   }, []);
 
   const getAssignmentsForCourse = (course: string) => {
@@ -54,7 +59,7 @@ export default function GradesFunction() {
     return filteredAssignments;
   };
 
-  const getGradesForStudent = (studentId: string, assignmentId: string) => {
+  const getGradesForStudent = (studentId: Object, assignmentId: string) => {
     const gradeEntry = grades.find(g => g.student === studentId && g.assignment === assignmentId);
     if (!gradeEntry) {
       console.warn(`Grade not found for student ${studentId} and assignment ${assignmentId}`);
