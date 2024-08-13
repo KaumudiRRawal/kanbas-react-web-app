@@ -73,4 +73,3 @@ export default function PeopleDetails({ fetchUsers }:
               className="btn btn-secondary float-start float-end me-2 wd-cancel" > Cancel </button>
 
       </div> ); }
-

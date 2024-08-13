@@ -5,12 +5,6 @@ import { useDispatch } from "react-redux";
 import { setCurrentUser } from "./reducer";
 
 export default function Profile() {
-    const dispatch = useDispatch();
-    const signout = async () => {
-        await client.signout();
-        dispatch(setCurrentUser(null));
-        navigate("/Kanbas/Account/Signin");
-      };
     
   const [profile, setProfile] = useState<any>({});
   const navigate = useNavigate();
@@ -26,6 +20,14 @@ export default function Profile() {
     
   };
   useEffect(() => { fetchProfile(); }, []);
+
+  const dispatch = useDispatch();
+  const signout = async () => {
+    await client.signout();
+    dispatch(setCurrentUser(null));
+    navigate("/Kanbas/Account/Signin");
+  };
+
   return (
     <div className="wd-profile-screen">
       <h1>Profile</h1>

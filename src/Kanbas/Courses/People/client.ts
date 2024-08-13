@@ -32,13 +32,3 @@ export const findUsersByRole = async (role: string) => {
     const response = await axios.post(`${USERS_API}`, user);
     return response.data;
   };
-  
-  
-  
-  
-  
-  
-    
-  
-  
-

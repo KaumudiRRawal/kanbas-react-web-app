@@ -3,8 +3,9 @@ import { Link, useParams } from "react-router-dom"; // chatgpt
 import * as client from "./client";
 import PeopleDetails from "./Details";
 import { FaPlus } from "react-icons/fa";
+
 export default function PeopleTable() {
-    const { cid } = useParams(); // Get the course ID from the URL chatgpt
+  const { cid } = useParams(); // Get the course ID from the URL chatgpt
   const [users, setUsers] = useState<any[]>([]);
   const [role, setRole] = useState("");
   const [name, setName] = useState("");
@@ -15,11 +16,11 @@ export default function PeopleTable() {
       username: `newuser${Date.now()}`,
       password: "password123",
       section: "S101",
+      email: `user${Date.now()}`,
       role: "STUDENT",
     });
     setUsers([...users, user]);
   };
-
 
   const filterUsersByName = async (name: string) => {
     setName(name);
